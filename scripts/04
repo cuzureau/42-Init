@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -f /etc/last ]; then
+md5sum /etc/crontab > /etc/last;
+fi
+
+if [ $(cat /etc/last | cut -d ' ' -f1) != $(md5sum /etc/crontab | cut -d ' ' -f1) ]; then
+echo "Warning! /etc/crontab has been modified" | mail -s "Modification /root/crontab" root;
+md5sum /etc/crontab > /etc/last;
+fi
+
+#ligne a rajouter dans cron, en utilisant le commande 'crontab -e' = 00 00 * * * /home/cuzureau/Desktop/./04

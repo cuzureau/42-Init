@@ -1,0 +1,1 @@
+il suffit de faire cette commande : dig slash16.org SOA ; et de regarder le SOA affiche ; on peut egalement faire : dig +nssearch

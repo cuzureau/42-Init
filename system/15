@@ -1,0 +1,1 @@
+kill $(ps -x | grep /var/log/syslog | cut -d ' ' -f2)

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+apt update >> /var/log/update_script.log
+apt upgrade >> /var/log/update_script.log
+
+
+#ligne a rajouter dans cron, en utilisant la commande 'crontab -e' = 00 4 * * * echo "password" | sudo /home/cuzureau/Desktop/./02  
+#ce qui est dangereux et a proscrire car le password est pas cache
